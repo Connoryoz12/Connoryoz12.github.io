@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Connor Yoskowitz | Aspiring Cybersecurity Analyst</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin:0; background:#0f1117; color:#e5e7eb; line-height:1.6; }
+    header { background:#111827; padding:2rem; text-align:center; }
+    header h1 { margin:0; font-size:2.5rem; color:#38bdf8; }
+    header p { margin:0.5rem 0; }
+    nav { margin-top:1rem; }
+    nav a { margin:0 0.75rem; color:#e5e7eb; text-decoration:none; }
+    nav a:hover { color:#38bdf8; }
+    section { padding:3rem 1.5rem; max-width:900px; margin:auto; }
+    h2 { color:#38bdf8; margin-bottom:1rem; }
+    .card { background:#1f2937; padding:1.5rem; border-radius:10px; margin-bottom:1.5rem; }
+    .tags { margin-top:0.5rem; }
+    .tag { display:inline-block; background:#374151; padding:0.25rem 0.75rem; border-radius:999px; font-size:0.85rem; margin:0.25rem; }
+    footer { text-align:center; padding:2rem; background:#111827; color:#9ca3af; }
+    a.btn { display:inline-block; padding:0.5rem 1rem; border-radius:6px; margin-top:1rem; background:#38bdf8; color:#111827; text-decoration:none; font-weight:bold; }
+    a.btn:hover { background:#0ea5e9; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Connor Yoskowitz</h1>
+    <p>Recent Graduate | Aspiring Cybersecurity Analyst</p>
+    <nav>
+      <a href="#projects">Projects</a>
+      <a href="#skills">Skills</a>
+      <a href="#experience">Experience</a>
+      <a href="#certs">Certifications/Education</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <section id="intro">
+    <h2>About Me</h2>
+    <div class="card">
+      <p>Hello! I’m Connor Yoskowitz, a recent graduate with a <strong>Bachelor’s degree in Cybersecurity and a minor in Computer Science</strong> from <strong>Jacksonville University</strong>. I’m currently building hands-on projects to sharpen my skills in areas like log analysis, vulnerability assessments, SIEM tools, and Python automation. My goal is to become a cybersecurity analyst and contribute to defending organizations against cyber threats.</p>
+      <a href="resume.pdf" class="btn" download>📄 Download Resume</a>
+    </div>
+  </section>
+
+  <section id="projects">
+    <h2>Projects</h2>
+
+    <div class="card">
+      <h3>🖥️ SIEM & Log Analysis Lab</h3>
+      <p>Built an on-premises SIEM lab using ELK Stack and Wazuh to monitor Windows and Linux endpoints. Created custom dashboards to track failed logins, brute force attempts, and suspicious process execution, simulating a real SOC environment.</p>
+      <div class="tags"><span class="tag">ELK Stack</span><span class="tag">Wazuh</span><span class="tag">Log Analysis</span><span class="tag">SIEM</span></div>
+      <a href="https://github.com/YOURUSERNAME/onprem-siem-lab" class="btn">View Project</a>
+    </div>
+
+    <div class="card">
+      <h3>🔍 Network Traffic & Threat Detection Lab</h3>
+      <p>Set up a virtual lab with Windows and Linux VMs to capture and analyze network traffic using Wireshark and Snort. Detected simulated port scans, C2 traffic, and malware communication, then documented findings and mitigation strategies.</p>
+      <div class="tags"><span class="tag">Wireshark</span><span class="tag">Snort</span><span class="tag">Network Security</span></div>
+      <a href="https://github.com/YOURUSERNAME/onprem-network-lab" class="btn">View Project</a>
+    </div>
+
+    <div class="card">
+      <h3>🛡️ Active Directory & Endpoint Security Lab</h3>
+      <p>Deployed a Windows Active Directory environment on-prem with multiple users and GPOs. Monitored login events, user activity, and system logs to identify suspicious behavior. Practiced endpoint hardening, auditing, and incident response workflows.</p>
+      <div class="tags"><span class="tag">Active Directory</span><span class="tag">Windows Security</span><span class="tag">Incident Response</span></div>
+      <a href="https://github.com/YOURUSERNAME/onprem-ad-lab" class="btn">View Project</a>
+    </div>
+  </section>
+
+  <section id="skills">
+    <h2>Skills</h2>
+    <div class="card">
+      <p><strong>Technical:</strong> SIEM (Splunk, ELK), Windows, Linux, Networking, Python, MITRE ATT&CK </p>
+      <p><strong>Tools:</strong> Wireshark, Nmap, Nessus, Burp Suite, Metasploit, Snort</p>
+      <p><strong>Soft Skills:</strong> Eager Learner, Analytical Thinking, Documentation & Reporting, Immense Work Ethic</p>
+    </div>
+  </section>
+
+  <section id="experience">
+    <h2>Experience</h2>
+    <div class="card">
+      <h3>IT Intern · AMPORTS Inc.</h3>
+      <p><em>April 2025 – Present | Jacksonville, FL</em></p>
+      <ul>
+        <li>Performed webpage vulnerability assessments using OWASP-ZAP.</li>
+        <li>Exposure to Sentiental One, Microsoft Entra, and Azure AD</li>
+        <li>Analyzed company software against NIST guidelines to ensure regulatory alignment.</li>
+        <li>Performed help desk tasks to support IT operations.</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h3>Networking IT Intern · Sports Media Technology</h3>
+      <p><em>January 2025 – May 2025 | Jacksonville, FL</em></p>
+      <ul>
+        <li>Set up and break down of networks.</li>
+        <li>Implemented basic security protocols to safeguard network.</li>
+        <li>Monitored network logs to ensure proper traffic flow.</li>
+        <li>Troubleshot network issues using various methods and techniques.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="certs">
+    <h2>Certifications/Education</h2>
+    <div class="card">
+      <ul>
+        <li>CompTIA Security+ (Planned)</li>
+        <li>Google Cybersecurity Certificate</li>
+        <li>TryHackMe SOC Level 1 (In Progress)</li>
+        <li>Jacksonville University B.S. Cybersecurity with Minor in Computer Science Graduate 2025</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="contact">
+    <h2>Contact</h2>
+    <div class="card" style="text-align:center;">
+      <p>📧 Email: <a href="mailto:ConnorYoskow@gmail.com">ConnorYoskow@gmail.com</a></p>
+      <p>💼 LinkedIn: <a href="https://linkedin.com/in/connor-yoskowitz">linkedin.com/in/connor-yoskowitz</a></p>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2025 Connor Yoskowitz. All rights reserved.</p>
+  </footer>
+</body>
+</html>
