@@ -5,6 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Connor Yoskowitz | Aspiring Cybersecurity Analyst</title>
   <style>
+    html {
+      scroll-behavior: smooth;
+    }
     body { 
       font-family: Arial, sans-serif; 
       margin:0; 
@@ -41,6 +44,13 @@
       padding:3rem 1.5rem; 
       max-width:900px; 
       margin:auto; 
+      opacity: 0; /* For fade-in */
+      transform: translateY(20px); /* Start slightly lower */
+      transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+    }
+    section.visible {
+      opacity: 1;
+      transform: translateY(0);
     }
     h2 { 
       color:#38bdf8; 
@@ -96,6 +106,30 @@
       transform: scale(1.05);
     }
 
+    /* Resume PDF container */
+    .resume-container {
+      width: 100%;
+      max-width: 100%;
+      height: 90vh;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+      margin-bottom: 2rem;
+    }
+    .resume-pdf {
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 768px) {
+      .resume-container { height: 70vh; }
+    }
+    @media (max-width: 480px) {
+      .resume-container { height: 60vh; }
+    }
+
     footer { 
       text-align:center; 
       padding:2rem; 
@@ -114,6 +148,7 @@
       <a href="#experience">Experience</a>
       <a href="#certs">Certifications/Education</a>
       <a href="#contact">Contact</a>
+      <a href="#resume">Resume</a>
     </nav>
   </header>
 
@@ -121,27 +156,23 @@
     <h2>About Me</h2>
     <div class="card">
       <p>Hello! I’m Connor Yoskowitz, a recent graduate with a <strong>Bachelor’s degree in Cybersecurity and a minor in Computer Science</strong> from <strong>Jacksonville University</strong>. I’m currently building hands-on projects to sharpen my skills in areas like log analysis, vulnerability assessments, SIEM tools, and Python automation. My goal is to become a cybersecurity analyst and contribute to defending organizations against cyber threats.</p>
-      <a href="resume.pdf" class="btn" download>📄 Download Resume</a>
     </div>
   </section>
 
   <section id="projects">
     <h2>Projects</h2>
-
     <div class="card">
       <h3>🖥️ SIEM & Log Analysis Lab</h3>
       <p>Built an on-premises SIEM lab using ELK Stack and Wazuh to monitor Windows and Linux endpoints. Created custom dashboards to track failed logins, brute force attempts, and suspicious process execution, simulating a real SOC environment.</p>
       <div class="tags"><span class="tag">ELK Stack</span><span class="tag">Wazuh</span><span class="tag">Log Analysis</span><span class="tag">SIEM</span></div>
       <a href="https://github.com/YOURUSERNAME/onprem-siem-lab" class="btn">View Project</a>
     </div>
-
     <div class="card">
       <h3>🔍 Network Traffic & Threat Detection Lab</h3>
       <p>Set up a virtual lab with Windows and Linux VMs to capture and analyze network traffic using Wireshark and Snort. Detected simulated port scans, C2 traffic, and malware communication, then documented findings and mitigation strategies.</p>
       <div class="tags"><span class="tag">Wireshark</span><span class="tag">Snort</span><span class="tag">Network Security</span></div>
       <a href="https://github.com/YOURUSERNAME/onprem-network-lab" class="btn">View Project</a>
     </div>
-
     <div class="card">
       <h3>🛡️ Active Directory & Endpoint Security Lab</h3>
       <p>Deployed a Windows Active Directory environment on-prem with multiple users and GPOs. Monitored login events, user activity, and system logs to identify suspicious behavior. Practiced endpoint hardening, auditing, and incident response workflows.</p>
@@ -171,7 +202,6 @@
         <li>Performed help desk tasks to support IT operations.</li>
       </ul>
     </div>
-
     <div class="card">
       <h3>Networking IT Intern · Sports Media Technology</h3>
       <p><em>January 2025 – May 2025 | Jacksonville, FL</em></p>
@@ -196,6 +226,13 @@
     </div>
   </section>
 
+  <section id="resume">
+    <h2>Resume</h2>
+    <div class="resume-container">
+      <iframe src="Connor_Yoskowitz_Resume.pdf" class="resume-pdf"></iframe>
+    </div>
+  </section>
+
   <section id="contact">
     <h2>Contact</h2>
     <div class="card" style="text-align:center;">
@@ -207,5 +244,22 @@
   <footer>
     <p>© 2025 Connor Yoskowitz. All rights reserved.</p>
   </footer>
+
+  <!-- Scroll Fade-in Script -->
+  <script>
+    const sections = document.querySelectorAll('section');
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if(entry.isIntersecting){
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1 });
+
+    sections.forEach(section => {
+      observer.observe(section);
+    });
+  </script>
 </body>
 </html>
