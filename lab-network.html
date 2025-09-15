@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Network Traffic & Threat Detection Lab | Connor Yoskowitz</title>
+  <link rel="stylesheet" href="labs-style.css">
+</head>
+<body>
+  <header>
+    <h1>Network Traffic & Threat Detection Lab</h1>
+    <nav><a href="index.html#projects">← Back to Main Page</a></nav>
+  </header>
+
+  <section>
+    <h2>Overview</h2>
+    <p>
+      This lab focuses on capturing and analyzing network traffic in a controlled environment to detect threats, intrusions, and malicious activity. Using Wireshark and Snort, I built a virtual lab to observe normal and abnormal network behaviors. The purpose of this lab is to gain hands-on experience with packet analysis, intrusion detection, and threat hunting techniques.
+    </p>
+
+    <h2>Setup</h2>
+    <p>
+      <strong>Virtualization Platform:</strong> Oracle VirtualBox running multiple virtual machines (Windows Server, Ubuntu Server, and Windows 10 client).<br>
+      <strong>Network Monitoring Tools:</strong> Wireshark for packet capture and Snort for intrusion detection.<br>
+      <strong>Network Configuration:</strong> Internal VirtualBox network with host-only adapter; controlled test traffic generated between VMs to simulate attacks and normal traffic.<br>
+      <strong>Endpoints:</strong> Windows and Linux VMs with configured services to generate network events.
+    </p>
+
+    <h2>Tools Used</h2>
+    <ul>
+      <li>Wireshark for packet capture and deep packet inspection.</li>
+      <li>Snort as an IDS to analyze traffic against predefined rules.</li>
+      <li>Nmap and custom scripts to generate port scans and test traffic.</li>
+      <li>Windows and Linux utilities (netcat, curl, etc.) to simulate C2 and malware activity.</li>
+      <li>MITRE ATT&CK for threat detection mapping.</li>
+    </ul>
+
+    <h2>Objectives</h2>
+    <ul>
+      <li>Capture and analyze real-time network traffic in a lab environment.</li>
+      <li>Detect simulated port scans, C2 traffic, and malware communication.</li>
+      <li>Develop Snort rules to identify suspicious behavior.</li>
+      <li>Document findings and recommend mitigation strategies.</li>
+    </ul>
+
+    <h2>Steps</h2>
+    <ol>
+      <li>Deployed Windows and Linux VMs on Oracle VirtualBox.</li>
+      <li>Configured an internal network to safely route traffic between VMs.</li>
+      <li>Installed Wireshark on a monitoring VM to capture packets.</li>
+      <li>Installed and configured Snort with custom rules to detect attacks.</li>
+      <li>Used Nmap to simulate port scans and network reconnaissance.</li>
+      <li>Generated mock malware/C2 traffic using netcat and curl to test detection.</li>
+      <li>Analyzed captured packets and IDS alerts to identify anomalies.</li>
+    </ol>
+
+    <h2>Findings / Results</h2>
+    <p>
+      Successfully captured and analyzed network traffic to identify simulated port scans and C2 communication. Snort rules triggered alerts for suspicious behavior, demonstrating the effectiveness of IDS in a lab setting. Documented findings, created a threat report, and recommended hardening measures (firewall rules, network segmentation, and IDS tuning).
+    </p>
+
+    <!-- Screenshots (add your own image files later) -->
+    <img src="assets/lab-network-setup.jpg" alt="Network Lab Setup Screenshot" class="lab-img">
+    <img src="assets/lab-network-results.jpg" alt="Network Lab Results Screenshot" class="lab-img">
+  </section>
+
+  <footer>
+    © 2025 Connor Yoskowitz. All rights reserved.
+  </footer>
+
+  <!-- Scroll Fade-in Script -->
+  <script>
+    const sections = document.querySelectorAll('section');
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if(entry.isIntersecting){
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1 });
+
+    sections.forEach(section => observer.observe(section));
+  </script>
+</body>
+</html>
