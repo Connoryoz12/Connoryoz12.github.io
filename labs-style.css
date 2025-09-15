@@ -1,0 +1,111 @@
+/* labs-style.css */
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* General body styling */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  background: #0f1117;
+  color: #e5e7eb;
+  line-height: 1.6;
+}
+
+/* Header */
+header {
+  background: #111827;
+  padding: 2rem;
+  text-align: center;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 2.5rem;
+  color: #38bdf8;
+}
+
+nav {
+  margin-top: 1rem;
+}
+
+nav a {
+  margin: 0 0.75rem;
+  color: #e5e7eb;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+nav a:hover {
+  color: #38bdf8;
+}
+
+/* Sections fade-in */
+section {
+  padding: 2rem;
+  max-width: 900px;
+  margin: auto;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+section.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+h2 {
+  color: #38bdf8;
+}
+
+/* Cards */
+.card {
+  background: #1f2937;
+  padding: 1.5rem;
+  border-radius: 10px;
+  margin-bottom: 1.5rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+}
+
+/* Lab images */
+.lab-img {
+  width: 100%;
+  max-height: 250px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+}
+
+/* Buttons */
+a.btn {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  margin-top: 1rem;
+  background: #38bdf8;
+  color: #111827;
+  text-decoration: none;
+  font-weight: bold;
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+
+a.btn:hover {
+  background: #0ea5e9;
+  transform: scale(1.05);
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 2rem;
+  background: #111827;
+  color: #9ca3af;
+}

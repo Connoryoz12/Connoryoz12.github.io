@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lab Title | Connor Yoskowitz</title>
+  <link rel="stylesheet" href="labs-style.css">
+</head>
+<body>
+  <header>
+    <h1>Lab Title</h1>
+    <nav><a href="index.html#projects">← Back to Main Page</a></nav>
+  </header>
+
+  <section>
+    <h2>Overview</h2>
+    <p>Write your full lab description here. Explain the purpose of the lab, your setup, tools used, and objectives.</p>
+
+    <h2>Setup</h2>
+    <p>Describe the environment: VMs, tools, OS versions, etc.</p>
+    <img src="assets/lab-setup.jpg" alt="Lab setup screenshot" class="lab-img">
+
+    <h2>Steps</h2>
+    <p>Document the steps of the lab here.</p>
+
+    <h2>Findings / Results</h2>
+    <p>Include screenshots, analysis, and outcomes.</p>
+    <img src="assets/lab-results.jpg" alt="Lab results screenshot" class="lab-img">
+  </section>
+
+  <footer>
+    © 2025 Connor Yoskowitz. All rights reserved.
+  </footer>
+
+  <!-- Scroll Fade-in Script -->
+  <script>
+    const sections = document.querySelectorAll('section');
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if(entry.isIntersecting){
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1 });
+
+    sections.forEach(section => observer.observe(section));
+  </script>
+</body>
+</html>
