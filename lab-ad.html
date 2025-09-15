@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Active Directory & Endpoint Security Lab | Connor Yoskowitz</title>
+  <link rel="stylesheet" href="labs-style.css">
+</head>
+<body>
+  <header>
+    <h1>Active Directory & Endpoint Security Lab</h1>
+    <nav><a href="index.html#projects">← Back to Main Page</a></nav>
+  </header>
+
+  <section>
+    <h2>Overview</h2>
+    <p>
+      This lab focuses on building and managing a Windows Active Directory environment and practicing endpoint security techniques. I deployed a small enterprise-style AD domain, created users and groups, configured Group Policy Objects (GPOs), and implemented endpoint monitoring and hardening. The goal is to gain hands-on experience with centralized identity management, security auditing, and incident response workflows.
+    </p>
+
+    <h2>Setup</h2>
+    <p>
+      <strong>Virtualization Platform:</strong> Oracle VirtualBox running Windows Server (Domain Controller) and multiple Windows 10 client VMs.<br>
+      <strong>Directory Services:</strong> Windows Server Active Directory with DNS and DHCP configured for the internal lab network.<br>
+      <strong>Endpoint Security:</strong> Sysmon for advanced logging, local firewall rules, and audit policies on endpoints.<br>
+      <strong>Network Configuration:</strong> Internal VirtualBox network simulating a small enterprise environment with host-only adapter.
+    </p>
+
+    <h2>Tools Used</h2>
+    <ul>
+      <li>Windows Server Active Directory & Group Policy Management.</li>
+      <li>Sysmon and Windows Event Viewer for detailed security logging.</li>
+      <li>PowerShell for automation and reporting.</li>
+      <li>Microsoft Security Baselines for hardening guidance.</li>
+      <li>MITRE ATT&CK framework to map and test detection scenarios.</li>
+    </ul>
+
+    <h2>Objectives</h2>
+    <ul>
+      <li>Deploy a functioning Windows Active Directory domain with multiple endpoints.</li>
+      <li>Create and manage user accounts, organizational units, and group policies.</li>
+      <li>Implement endpoint monitoring to detect suspicious activity.</li>
+      <li>Practice security hardening and basic incident response procedures.</li>
+    </ul>
+
+    <h2>Steps</h2>
+    <ol>
+      <li>Deployed a Windows Server VM and promoted it to a Domain Controller with DNS and DHCP roles.</li>
+      <li>Joined multiple Windows 10 client VMs to the domain.</li>
+      <li>Created organizational units, user accounts, and groups to simulate an enterprise structure.</li>
+      <li>Configured Group Policy Objects (GPOs) to enforce security baselines (password policies, firewall rules, logging).</li>
+      <li>Installed Sysmon on endpoints for enhanced event logging.</li>
+      <li>Monitored domain and endpoint logs for failed logins, privilege escalations, and unusual process creation.</li>
+      <li>Practiced incident response workflows using simulated attacks (unauthorized login attempts, lateral movement).</li>
+    </ol>
+
+    <h2>Findings / Results</h2>
+    <p>
+      Successfully implemented a Windows AD domain with multiple clients and enforced security through GPOs. Detected and analyzed suspicious user activity and abnormal process execution via Sysmon and Event Viewer. Documented findings and recommended additional hardening steps (multi-factor authentication, stricter audit policies, and endpoint isolation procedures). Demonstrated real-world skills in Active Directory administration, endpoint security, and basic SOC-style monitoring.
+    </p>
+
+    <!-- Screenshots (add your own image files later) -->
+    <img src="assets/lab-ad-setup.jpg" alt="Active Directory Lab Setup Screenshot" class="lab-img">
+    <img src="assets/lab-ad-results.jpg" alt="Active Directory Lab Results Screenshot" class="lab-img">
+  </section>
+
+  <footer>
+    © 2025 Connor Yoskowitz. All rights reserved.
+  </footer>
+
+  <!-- Scroll Fade-in Script -->
+  <script>
+    const sections = document.querySelectorAll('section');
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if(entry.isIntersecting){
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1 });
+
+    sections.forEach(section => observer.observe(section));
+  </script>
+</body>
+</html>
