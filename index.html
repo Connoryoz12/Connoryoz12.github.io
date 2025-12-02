@@ -102,13 +102,12 @@
       color:#9ca3af; 
     }
 
-    /* ⭐ CLEAN RESUME VIEW (NO GREY BACKGROUND, JUST THE PAGE) */
-    .resume-container {
+    /* ⭐ CLEAN RESUME IMAGE — NO PDF UI */
+    .resume-img-container {
       width: 100%;
-      height: 90vh;
+      background: white;
       border-radius: 10px;
       overflow: hidden;
-      background: #ffffff;
       box-shadow: 0 10px 20px rgba(0,0,0,0.5);
       display: flex;
       justify-content: center;
@@ -116,16 +115,14 @@
       margin-bottom: 1.5rem;
     }
 
-    .resume-pdf {
+    .resume-img {
       width: 100%;
-      height: 100%;
-      border: none;
-      background: white;
+      height: auto;
+      display: block;
     }
 
-    @media (max-width:768px) { .resume-container { height: 70vh; } }
-    @media (max-width:480px) { .resume-container { height: 60vh; } }
-
+    @media (max-width:768px) { .resume-img-container { height: auto; } }
+    @media (max-width:480px) { .resume-img-container { height: auto; } }
   </style>
 </head>
 
@@ -225,16 +222,16 @@
   </div>
 </section>
 
-<!-- ⭐ CLEAN RESUME SECTION -->
+<!-- ⭐ PNG RESUME DISPLAY -->
 <section id="resume">
   <h2>Resume</h2>
 
-  <div class="resume-container">
-    <embed src="Connor_Yoskowitz_Resume.pdf" type="application/pdf" class="resume-pdf">
+  <div class="resume-img-container">
+    <img src="Connor_Yoskowitz_Resume.png" alt="Resume" class="resume-img">
   </div>
 
   <div style="text-align:center;">
-    <a href="Connor_Yoskowitz_Resume.pdf" download class="btn">⬇️ Download Resume</a>
+    <a href="Connor_Yoskowitz_Resume.pdf" download class="btn">⬇️ Download Resume (PDF)</a>
   </div>
 </section>
 
